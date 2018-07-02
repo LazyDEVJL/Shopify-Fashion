@@ -1,0 +1,64 @@
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="{{ shop.locale }}">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <!-- Fashion Theme CSS ================================================== -->
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/bootstrap.min.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/font-awesome.min.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/elements.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/timber.scss.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/style.scss.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/owl.carousel.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/owl.theme.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/owl.transitions.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+  <link href="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/animate.css?3617569351442115498" rel="stylesheet" type="text/css"
+    media="all" />
+
+  <link rel="canonical" href="{{ canonical_url }}"> {%- if settings.favicon != blank -%}
+  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png"> {%- endif -%} {%- capture seo_title -%} {{ page_title }} {%- if current_tags -%} {%- assign meta_tags = current_tags |
+  join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}} {%- endif -%} {%- if current_page != 1 -%} &ndash;
+  {{ 'general.meta.page' | t: page: current_page }} {%- endif -%} {%- assign escaped_page_title = page_title | escape -%}
+  {%- unless escaped_page_title contains shop.name -%} &ndash; {{ shop.name }} {%- endunless -%} {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}"> {%- endif -%} {% include 'social-meta-tags' %} {{ 'theme-fashion.scss.css' | asset_url | stylesheet_tag }} 
+  {% include 'header-fashion-js' %} 
+  {{ content_for_header }}
+</head>
+
+<body id="fashion-shop" class="template-{{ template | split: '.' | first }}">
+
+  {% include 'nav-drawer' %} 
+  {% include 'cart-drawer' %}
+
+  <div class="page-container" id="PageContainer">
+    {% include 'header-fashion' %}
+
+    <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    
+    {% include 'footer-fashion' %}
+
+  </div>
+
+  {% include 'footer-fashion-js' %}
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<div id="NavDrawer" class="drawer drawer--left">
+   <div class="drawer__header">
+      <div class="drawer__title h3">Browse</div>
+      <div class="drawer__close js-drawer-close">
+         <button type="button" class="icon-fallback-text">
+            <span class="icon icon-x" aria-hidden="true"></span>
+            <span class="fallback-text">Close menu</span>
+         </button>
+      </div>
+   </div>
+   <!-- begin mobile-nav -->
+   <ul class="mobile-nav">
+      <li class="mobile-nav__item mobile-nav__search">
+         <!-- /snippets/search-bar.liquid -->
+         <form action="/search" method="get" class="input-group search-bar" role="search">
+
+            <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field" aria-label="Search our store">
+            <span class="input-group-btn">
+               <button type="submit" class="btn icon-fallback-text">
+                  <span class="sprite sprite-search" aria-hidden="true"></span>
+                  <span class="fallback-text">Search</span>
+               </button>
+            </span>
+         </form>
+      </li>
+      <li class="mobile-nav__item mobile-nav__item--active" aria-haspopup="true">
+         <div class="mobile-nav__has-sublist">
+            <a href="/" class="mobile-nav__link">Home</a>
+            <div class="mobile-nav__toggle">
+               <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+                  <span class="icon icon-plus" aria-hidden="true"></span>
+                  <span class="fallback-text">See More</span>
+               </button>
+               <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+                  <span class="icon icon-minus" aria-hidden="true"></span>
+                  <span class="fallback-text">"Close Cart"</span>
+               </button>
+            </div>
+         </div>
+         <ul class="mobile-nav__sublist">
+
+            <li class="mobile-nav__item ">
+               <a href="http://fashion-shop-11.myshopify.com/?preview_theme_id=89832385" class="mobile-nav__link">Home page 1</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="http://fashion-shop-11.myshopify.com/?preview_theme_id=90606721" class="mobile-nav__link">Home page 2</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="http://fashion-shop-11.myshopify.com/?preview_theme_id=90769217" class="mobile-nav__link">Home page 3</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="http://fashion-shop-11.myshopify.com/?preview_theme_id=89788929" class="mobile-nav__link">Home page 4</a>
+            </li>
+
+         </ul>
+      </li>
+      <li class="mobile-nav__item" aria-haspopup="true">
+         <div class="mobile-nav__has-sublist">
+            <a href="/collections/all" class="mobile-nav__link">Catalog</a>
+            <div class="mobile-nav__toggle">
+               <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+                  <span class="icon icon-plus" aria-hidden="true"></span>
+                  <span class="fallback-text">See More</span>
+               </button>
+               <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+                  <span class="icon icon-minus" aria-hidden="true"></span>
+                  <span class="fallback-text">"Close Cart"</span>
+               </button>
+            </div>
+         </div>
+         <ul class="mobile-nav__sublist">
+
+            <li class="mobile-nav__item ">
+               <a href="/collections/men" class="mobile-nav__link">Men</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="/collections/women" class="mobile-nav__link">Women</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="#" class="mobile-nav__link">Kids</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="#" class="mobile-nav__link">Girls</a>
+            </li>
+
+            <li class="mobile-nav__item ">
+               <a href="http://Boys" class="mobile-nav__link">Boys</a>
+            </li>
+         </ul>
+      </li>
+      <li class="mobile-nav__item" aria-haspopup="true">
+
+         <div class="mobile-nav__has-sublist">
+            <a href="#" class="mobile-nav__link">Featured</a>
+            <div class="mobile-nav__toggle">
+               <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+                  <span class="icon icon-plus" aria-hidden="true"></span>
+                  <span class="fallback-text">See More</span>
+               </button>
+               <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+                  <span class="icon icon-minus" aria-hidden="true"></span>
+                  <span class="fallback-text">"Close Cart"</span>
+               </button>
+            </div>
+         </div>
+         <ul class="mobile-nav__sublist">
+            <li class="awemenu-megamenu-item">
+               <div class="grid">
+                  <div class="grid__item large--one-fifth">
+                     <h3>Collection</h3>
+                     <ul class="super">
+                        <li>
+                           <a href="/collections/men">Men</a>
+                        </li>
+                        <li>
+                           <a href="/collections/women">Women</a>
+                        </li>
+                        <li>
+                           <a href="#">Kids</a>
+                        </li>
+                        <li>
+                           <a href="#">Girls</a>
+                        </li>
+                        <li>
+                           <a href="http://Boys">Boys</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="grid__item large--one-fifth">
+                     <h3>Shop</h3>
+                     <ul class="super">
+                        <li>
+                           <a href="/pages/shipping">Shipping</a>
+                        </li>
+                        <li>
+                           <a href="#">Favorite</a>
+                        </li>
+                        <li>
+                           <a href="/pages/wish-list">Wishlist</a>
+                        </li>
+                        <li>
+                           <a href="/pages/gift-card">Gift card</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="grid__item large--one-fifth">
+                     <h3>Featured</h3>
+                     <ul class="super">
+                        <li>
+                           <a href="/collections/kids">Kids</a>
+                        </li>
+                        <li>
+                           <a href="/collections/girls">Girls</a>
+                        </li>
+                        <li>
+                           <a href="/collections/boys">Boys</a>
+                        </li>
+                        <li>
+                           <a href="/collections/women">Women</a>
+                        </li>
+                        <li>
+                           <a href="/collections/men">Men</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="grid__item large--one-fifth">
+                     <h3>Custom link</h3>
+                     <ul class="super">
+                        <li>
+                           <a href="/">Affiliates</a>
+                        </li>
+                        <li>
+                           <a href="/">Jobs</a>
+                        </li>
+                        <li>
+                           <a href="/pages/contact-us">Contact</a>
+                        </li>
+                        <li>
+                           <a href="/search">Search</a>
+                        </li>
+                        <li>
+                           <a href="/pages/about-us">About us</a>
+                        </li>
+
+                     </ul>
+                  </div>
+                  <div class="grid__item large--one-fifth">
+                     <h3></h3>
+                     <a href="#">
+                        <img src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/megamenu_1_image_1.jpg?3617569351442115498" alt="image">
+                     </a>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </li>
+      <li class="mobile-nav__item">
+         <a href="/pages/about-us" class="mobile-nav__link">About us</a>
+      </li>
+      <li class="mobile-nav__item">
+         <a href="/pages/contact-us" class="mobile-nav__link">Contact us</a>
+      </li>
+      <li class="mobile-nav__item">
+         <a href="/apps/help-center" class="mobile-nav__link">Help center</a>
+      </li>
+      <li class="mobile-nav__item">
+         <a href="/blogs/news" class="mobile-nav__link">Blog</a>
+      </li>
+      <li class="mobile-nav__item">
+         <a href="/account/login" id="customer_login_link">Log in</a>
+      </li>
+
+      <li class="mobile-nav__item">
+         <a href="/account/register" id="customer_register_link">Create account</a>
+      </li>
+   </ul>
+   <!-- //mobile-nav -->
+</div>
