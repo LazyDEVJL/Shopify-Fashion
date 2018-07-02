@@ -1,0 +1,28 @@
+<section>
+   <div class="wrapper">
+      <div class="inner space-top-80 section-product-new">
+         <!-- /templates/snippets/section-product-new.liquid -->
+         <div class="arrivals ">
+            <h2 class="title">Recent Product</h2> 
+            <div class="grid">
+            {% for product in collection.products %}
+               {% include 'home-recent-product-item' %}
+            {% endfor %}
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% schema %}
+  {
+    "name": "home-recent-products",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

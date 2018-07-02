@@ -75,6 +75,8 @@ sections/header.liquid:
   development: 2018-07-02T09:33:50+07:00   6f3c5034d8e5f6461b1a873da60d56e7
 sections/hero.liquid:
   development: 2018-07-02T09:33:51+07:00   b75948d15b81b97297a923bc6ed33fc4
+sections/home-recent-products.liquid:
+  development: 2018-07-02T11:56:15-12:00   e7f1f83885da5f1fccd047f9fa1a1cce
 sections/image-bar.liquid:
   development: 2018-07-02T09:33:51+07:00   8e416597663e919c5adca53119a24dc2
 sections/list-collections-template.liquid:
@@ -123,8 +125,8 @@ snippets/home-blog.liquid:
   development: 2018-07-03T05:13:26+07:00   e4ea173a42b829f02dfc5f6fc34a3ece
 snippets/home-brands.liquid:
   development: 2018-07-03T05:17:48+07:00   8186253a298c0a765b682ca83d3df1e5
-snippets/home-recent-products.liquid:
-  development: 2018-07-02T11:17:26-12:00   e4b6d1c88772cb96e8e78a08b21e11a5
+snippets/home-recent-product-item.liquid:
+  development: 2018-07-02T11:41:09-12:00   77bad126aa35f263830161d2a1a82442
 snippets/home-services.liquid:
   development: 2018-07-03T05:09:43+07:00   1a4ed6e3b20238a0b7e84c67e194c860
 snippets/home-slider.liquid:
@@ -242,7 +244,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2018-07-02T09:33:56+07:00   afb0801dfa475df4c920ba82983c7650
 templates/index.liquid:
-  development: 2018-07-03T05:18:16+07:00   f436063885748966ce053b22603c4e26
+  development: 2018-07-02T11:42:16-12:00   6729f72ed8778735994f7f4b6aa30303
 templates/list-collections.liquid:
   development: 2018-07-02T09:33:56+07:00   d42f6d6957169811896f646709d353d9
 templates/page.contact.liquid:
