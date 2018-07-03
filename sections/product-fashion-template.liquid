@@ -1,0 +1,874 @@
+<!-- /snippets/breadcrumb.liquid -->
+{% include 'breadcumb-fashion' %}
+<!-- /templates/product.liquid -->
+<div itemscope itemtype="http://schema.org/Product">
+   <meta itemprop="url" content="{{ product.url }}">
+   <meta itemprop="image" content="{{product.featured_image | img_url: '444x600'}}">
+   <h3 class="page_name">Product Page</h3>
+   <div class="grid product-single">
+      <div class="grid__item large--one-half text-center">
+         <div class="grid">
+            <div class="product-single__photos grid__item large--four-fifths medium--four-fifths left" id="ProductPhoto">
+               <a href="{{ product.featured_image | img_url }}" class="cloud-zoom" title="{{ product.title }}" data-rel="useWrapper: false, showTitle: false, zoomWidth:'auto', zoomHeight:'auto', adjustY:0, adjustX:10">
+                  <img src="{{ product.featured_image | img_url }}" alt="{{ product.title }}" id="ProductPhotoImg">
+               </a>
+            </div>
+            <div class="right grid__item large--one-fifth medium--one-fifth">
+               <div class="lite-carousel-play special-collection">
+                  <a class="prev carousel-md" href="#">
+                     <span class="fa fa-angle-up"></span>
+                  </a>
+                  <div data-carousel="lite" data-visible="4">
+                     <ul class="product-single__thumbnails" id="ProductThumbs">
+                        {% for image in product.images %}
+                        <li class="product__thumbnails">
+                           <a href="{{ image.src | img_url }}" class="product-single__thumbnail thumb-link" data-rel="{{ image.src | img_url }}">
+                              <img src="{{ image.src | img_url }}" alt="{{ product.title }}">
+                           </a>
+                        </li>
+                        {% endfor %}
+                     </ul>
+                  </div>
+                  <a class="next carousel-md" href="#">
+                     <span class="fa fa-angle-down"></span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="grid__item large--one-half">
+         <h1 itemprop="name">{{ product.title }}</h1>
+         <span class="shopify-product-reviews-badge" data-id="5330185665"></span>
+         {% comment %}
+         <p class="des-short">
+            {{ product.description | truncate: 50 }}
+         </p>
+         <hr> {% endcomment %}
+         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="USD">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+               <div class="junoVariants">
+                  <select name="id" id="productSelect" class="product-single__variants">
+                     <option selected="selected" data-sku="" value="16440302593">L / red -
+                        <span class="money">$200.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440302657">L / blue -
+                        <span class="money">$150.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440302721">L / orange -
+                        <span class="money">$300.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440302785">XS / black -
+                        <span class="money">$200.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440302849">L / black -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440302913">L / pink -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440302977">L / yellow -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303041">L / green -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303105">XL / red -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303169">XL / blue -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303233">XL / orange -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303297">XL / white -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303361">XXXL / black -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303425">XL / pink -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303489">XL / yellow -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303553">XL / green -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303617">XXL / red -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303681">XXL / blue -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303745">XXL / orange -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303809">XXL / white -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303873">XXL / black -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440303937">XXL / pink -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304001">XXL / yellow -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304065">XXL / green -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304129">M / red -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304193">M / blue -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304257">M / orange -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304321">M / white -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304385">M / black -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304449">M / pink -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304513">M / yellow -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304577">M / green -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304641">S / red -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304705">S / blue -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304769">S / orange -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304833">S / white -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440304961">S / pink -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305025">S / yellow -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305153">S / green -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305217">XS / red -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305281">XS / blue -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305345">XS / orange -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305409">XS / white -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305537">XS / pink -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305601">XS / yellow -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                     <option data-sku="" value="16440305665">XS / green -
+                        <span class="money">$250.00 USD</span>
+                     </option>
+                  </select>
+               </div>
+               <style rel="stylesheet" type="text/css">
+                  .junoVariants .selector-wrapper:nth-child(1) {
+                     display: none;
+                  }
+               </style>
+               <div class="swatch clearfix" data-option-index="0">
+                  <div class="header">Size</div>
+                  <div data-value="L" class="swatch-element l available">
+                     <input id="swatch-0-l" type="radio" name="option-0" value="L" checked />
+                     <label for="swatch-0-l">
+                        L
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="XS" class="swatch-element xs available">
+                     <input id="swatch-0-xs" type="radio" name="option-0" value="XS" />
+                     <label for="swatch-0-xs">
+                        XS
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .l').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="XL" class="swatch-element xl available">
+                     <input id="swatch-0-xl" type="radio" name="option-0" value="XL" />
+                     <label for="swatch-0-xl">
+                        XL
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="XXXL" class="swatch-element xxxl available">
+                     <input id="swatch-0-xxxl" type="radio" name="option-0" value="XXXL" />
+                     <label for="swatch-0-xxxl">
+                        XXXL
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxxl').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="XXL" class="swatch-element xxl available">
+                     <input id="swatch-0-xxl" type="radio" name="option-0" value="XXL" />
+                     <label for="swatch-0-xxl">
+                        XXL
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xxl').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="M" class="swatch-element m available">
+                     <input id="swatch-0-m" type="radio" name="option-0" value="M" />
+                     <label for="swatch-0-m">
+                        M
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .m').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="S" class="swatch-element s available">
+                     <input id="swatch-0-s" type="radio" name="option-0" value="S" />
+                     <label for="swatch-0-s">
+                        S
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .s').removeClass('soldout').addClass('available').find(
+                        ':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="0"] .xs').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+               </div>
+               <style rel="stylesheet" type="text/css">
+                  .junoVariants .selector-wrapper:nth-child(2) {
+                     display: none;
+                  }
+               </style>
+               <div class="swatch clearfix" data-option-index="1">
+                  <div class="header">Color</div>
+                  <div data-value="red" class="swatch-element color red available">
+                     <div class="tooltip">red</div>
+                     <input id="swatch-1-red" type="radio" name="option-1" value="red" checked />
+                     <label for="swatch-1-red" style="background-color: red; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/red.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .red').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="blue" class="swatch-element color blue available">
+                     <div class="tooltip">blue</div>
+                     <input id="swatch-1-blue" type="radio" name="option-1" value="blue" />
+                     <label for="swatch-1-blue" style="background-color: blue; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/blue.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .blue').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="orange" class="swatch-element color orange available">
+                     <div class="tooltip">orange</div>
+                     <input id="swatch-1-orange" type="radio" name="option-1" value="orange" />
+                     <label for="swatch-1-orange" style="background-color: orange; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/orange.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .orange').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="black" class="swatch-element color black available">
+                     <div class="tooltip">black</div>
+                     <input id="swatch-1-black" type="radio" name="option-1" value="black" />
+                     <label for="swatch-1-black" style="background-color: black; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/black.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="pink" class="swatch-element color pink available">
+                     <div class="tooltip">pink</div>
+                     <input id="swatch-1-pink" type="radio" name="option-1" value="pink" />
+                     <label for="swatch-1-pink" style="background-color: pink; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/pink.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .pink').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="yellow" class="swatch-element color yellow available">
+                     <div class="tooltip">yellow</div>
+                     <input id="swatch-1-yellow" type="radio" name="option-1" value="yellow" />
+                     <label for="swatch-1-yellow" style="background-color: yellow; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/yellow.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="green" class="swatch-element color green available">
+                     <div class="tooltip">green</div>
+                     <input id="swatch-1-green" type="radio" name="option-1" value="green" />
+                     <label for="swatch-1-green" style="background-color: green; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/green.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .green').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .red').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .blue').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .orange').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <div data-value="white" class="swatch-element color white available">
+                     <div class="tooltip">white</div>
+                     <input id="swatch-1-white" type="radio" name="option-1" value="white" />
+                     <label for="swatch-1-white" style="background-color: white; background-image: url(//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/white.png?12725127173897167736)">
+                        <img class="crossed-out" alt="" src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/soldout.png?12725127173897167736" />
+                     </label>
+                  </div>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .white').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .pink').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .green').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .red').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .blue').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .orange').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .white').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .pink').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .green').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .red').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .blue').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .orange').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .white').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .black').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .pink').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .green').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .red').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .blue').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .orange').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .white').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .pink').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .green').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .red').removeClass('soldout').addClass('available')
+                        .find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .blue').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .orange').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .white').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .pink').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .yellow').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+                  <script>
+                     jQuery('.swatch[data-option-index="1"] .green').removeClass('soldout').addClass(
+                        'available').find(':radio').removeAttr('disabled');
+                  </script>
+               </div>
+               <span class="visually-hidden">Regular price</span>
+               <div id="ProductPrice" class="h2" itemprop="price">
+                  <span class="money">$200.00</span>
+               </div>
+               <span class="visually-hidden">Sale price</span>
+               <p id="ComparePrice">
+                  Compare at
+               </p>
+               <label for="Quantity" class="quantity-selector">Quantity</label>
+               <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+               <button type="submit" name="add" id="AddToCart" class="btn">
+                  <span class="sprite sprite-add-to-cart" id="AddToCartText">Add to Cart</span>
+               </button>
+            </form>
+            <a class="btn wishlist  awe-button product-quick-whistlist" href="/account/login" data-toggle="tooltip" title="Add to whistlist">
+               <i class="fa fa-heart"></i>
+               <span>Add to Wishlist</span>
+            </a>
+         </div>
+         <div class="add-this">
+            <div class="addthis_toolbox addthis_default_style">
+               <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+               <a class="addthis_button_tweet"></a>
+               <a class="addthis_counter addthis_pill_style"></a>
+            </div>
+            <script type='text/javascript'>
+               var addthis_product = 'sfy-2.0.2';
+               var addthis_plugin_info = {
+                  "info_status": "enabled",
+                  "cms_name": "Shopify",
+                  "cms_version": null,
+                  "plugin_name": "AddThis Sharing Tool",
+                  "plugin_version": "2.0.2",
+                  "plugin_mode": "AddThis"
+               };
+               var addthis_config = { /*AddThisShopify_config_begins*/
+                  pubid: 'ra-5228438f4614154c',
+                  button_style: 'style2',
+                  services_compact: '',
+                  ui_delay: 0,
+                  ui_click: false,
+                  ui_language: '',
+                  data_track_clickback: true,
+                  data_ga_tracker: '',
+                  custom_services: '',
+                  custom_services_size: true /*AddThisShopify_config_ends*/
+               };
+            </script>
+            <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5228438f4614154c'></script>
+         </div>
+         <div class="product-tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tab-v7" role="tablist">
+               <li role="presentation" class="active">
+                  <a href="#product-detail" aria-controls="home" role="tab" data-toggle="tab">Description</a>
+               </li>
+               <li role="presentation">
+                  <a href="#product-shipping" data-toggle="tab">Shipping and Return</a>
+               </li>
+               <li role="presentation">
+                  <a href="#product-sizechart" data-toggle="tab">Size Chart</a>
+               </li>
+               <li role="presentation">
+                  <a href="#product-reviews" aria-controls="product-reviews" role="tab" data-toggle="tab">Review </a>
+               </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+               <div role="tabpanel" class="tab-pane active" id="product-detail">
+                  <div class="product-description rte" itemprop="description">
+                     <span>{{ product.description }}</span>
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane" id="product-shipping">
+                  <div class="rte">
+                     <b>Returns Policy</b>
+                     <br>
+                     <p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay
+                        the return shipping costs if the return is a result of our error (you received an incorrect or defective
+                        item, etc.).</p>
+                     <p>You should expect to receive your refund within four weeks of giving your package to the return shipper,
+                        however, in many cases you will receive a refund more quickly. This time period includes the transit
+                        time for us to receive your return from the shipper (5 to 10 business days), the time it takes us
+                        to process your return once we receive it (3 to 5 business days), and the time it takes your bank
+                        to process our refund request (5 to 10 business days).</p>
+                     <p>If you need to return an item, simply login to your account, view the order using the 'Complete Orders'
+                        link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of
+                        your refund once we've received and processed the returned item.</p>
+                     <b>Shipping</b>
+                     <br>
+                     <p>We can ship to virtually any address in the world. Note that there are restrictions on some products,
+                        and some products cannot be shipped to international destinations.</p>
+                     <p>When you place an order, we will estimate shipping and delivery dates for you based on the availability
+                        of your items and the shipping options you choose. Depending on the shipping provider you choose,
+                        shipping date estimates may appear on the shipping quotes page.</p>
+                     <p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any
+                        such item can be found on its detail page. To reflect the policies of the shipping companies we use,
+                        all weights will be rounded up to the next full po</p>
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane" id="product-sizechart">
+                  <div class="rte">
+                     <img src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/size_chart_content.jpg?12725127173897167736" alt="" />
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane" id="product-reviews">
+                  <div id="shopify-product-reviews" data-id="5330185665"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr>
+   <section class="related-products">
+      <h2 class="title">Related Products</h2>
+      <div class="products related-carousel owl-carousel owl-theme" data-items="4" data-pagination="false" data-navigation="true"
+         data-autoPlay="true">
+         {% assign currentPUrl = product.url %}
+         {% for tag in product.tags %} 
+         {% for product in collections[tag].products limit:4 %}
+         {% if product.url == currentPUrl %} {% continue %} {% endif %}
+         <div id="product-{{ product.id }}" class="product-container" data-publish-date="{{ product.created_at }}">
+            <div class="product-image ">
+               <div class="product-thumbnail">
+                  <a href="{{ product.url }}" title="">
+                     <img class="product-featured-image" src="{{ product.featured_image | img_url: '270x350' }}"
+                        alt="{{ product.title }}">
+                  </a>
+               </div>
+               <!-- /.product-thumbnail -->
+               <div class="product-actions">
+                  <form method="post" action="/cart/add" class="add-to-cart">
+                     <input type="hidden" name="id" value="16440333889" />
+                     <!-- <input type="submit" value="Buy now" class="btn" /> -->
+                     <button type="submit" name="add" id="AddToCart5330204289" class="btn">
+                        <span class="fa fa-shopping-cart"></span>
+                     </button>
+                  </form>
+                  <a class="btn wishlist  awe-button product-quick-whistlist" href="/account/login" data-toggle="tooltip" title="Add to whistlist">
+                     <i class="fa fa-heart"></i>
+                     <span>Add to Wishlist</span>
+                  </a>
+                  <a href="/collections/new-products/products/farlap-coat-00010" data-id="farlap-coat-00010" class="btn product-quick-view btn-quickview"
+                     title="Quickview">
+                     <i class="fa fa-eye"></i>
+                  </a>
+               </div>
+            </div>
+            <!-- /.product-image -->
+            <div class="product-meta">
+               <h4 class="product-name">
+                  <a href="{{ product.title }}" title="{{ product.title }}">{{ product.title }}</a>
+               </h4>
+               <!-- /.product-product -->
+               <div class="product-price">
+                  <span class="amout">
+                     <span>From
+                        <span class="money">{{ product.price | money }}</span>
+                     </span>
+                  </span>
+               </div>
+               <!-- /.product-price -->
+            </div>
+            <!-- /.product-meta -->
+            {% comment %} <div class="swatch clearfix" data-option-index="1">
+               <div data-value="red" class="swatch-element color red available" data-image="//cdn.shopify.com/s/files/1/1195/4332/products/coat-_32_grande.jpg?v=1460085086">
+                  <label for="swatch-1-red" style="background-color: red;">
+                     red
+                  </label>
+               </div>
+               <div data-value="blue" class="swatch-element color blue available" data-image="//cdn.shopify.com/s/files/1/1195/4332/products/coat-_34_grande.jpg?v=1460085104">
+                  <label for="swatch-1-blue" style="background-color: blue;">
+                     blue
+                  </label>
+               </div>
+               <div data-value="orange" class="swatch-element color orange available">
+                  <label for="swatch-1-orange" style="background-color: orange;">
+                     orange
+                  </label>
+               </div>
+               <div data-value="white" class="swatch-element color white available" data-image="//cdn.shopify.com/s/files/1/1195/4332/products/coat-_20_grande.jpeg?v=1457059084">
+                  <label for="swatch-1-white" style="background-color: white;">
+                     white
+                  </label>
+               </div>
+            </div> {% endcomment %}
+         </div>
+         {% endfor %} 
+         {% endfor %}
+         <!-- product-container -->
+      </div>
+   </section>
+</div>

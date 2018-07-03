@@ -125,21 +125,11 @@
                                  <span class="icon icon-plus left" aria-hidden="true"></span>
                               </a>
                               <ul class="site-nav__dropdown">
+                              {% for collection in collections %}
                                  <li>
-                                    <a href="/collections/men" class="site-nav__link">Men</a>
-                                 </li>
-                                 <li>
-                                    <a href="/collections/women" class="site-nav__link">Women</a>
-                                 </li>
-                                 <li>
-                                    <a href="#" class="site-nav__link">Kids</a>
-                                 </li>
-                                 <li>
-                                    <a href="#" class="site-nav__link">Girls</a>
-                                 </li>
-                                 <li>
-                                    <a href="http://Boys" class="site-nav__link">Boys</a>
-                                 </li>
+                                    <a href="{{ collection.url }}" class="site-nav__link">{{ collection.title }}</a>
+                                 </li>  
+                              {% endfor %}
                               </ul>
                            </li>
                            <li class="site-nav--has-dropdown megamenu-dropdown" aria-haspopup="true">
@@ -153,21 +143,11 @@
                                        <div class="grid__item large--one-fifth">
                                           <h3>Collection</h3>
                                           <ul class="super">
+                                          {% for collection in collections %}
                                              <li>
-                                                <a href="/collections/men">Men</a>
-                                             </li>
-                                             <li>
-                                                <a href="/collections/women">Women</a>
-                                             </li>
-                                             <li>
-                                                <a href="#">Kids</a>
-                                             </li>
-                                             <li>
-                                                <a href="#">Girls</a>
-                                             </li>
-                                             <li>
-                                                <a href="http://Boys">Boys</a>
-                                             </li>
+                                                <a href="{{ collection.url }}" class="site-nav__link">{{ collection.title }}</a>
+                                             </li>  
+                                          {% endfor %}
                                           </ul>
                                        </div>
                                        <div class="grid__item large--one-fifth">

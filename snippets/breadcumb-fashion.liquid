@@ -1,0 +1,22 @@
+<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+   <img src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/bg-breadcrumb.jpg?12725127173897167736" alt="" width="100%"/>
+   <div class="inner">
+      <a href="/" title="Back to the frontpage">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>
+      {% if handle != 'all' %}
+         {% if handle != 'collections' %}
+            Products / {{ product.title }}
+         {% else %}
+            {% for collection in collections %}
+               {% if handle == collection.handle %}
+                  {{ collection.title }}
+               {% endif %}
+         {% endfor %}   
+         {% endif %}
+      {% else %}
+         All Products
+      {% endif %}
+      </span>
+   </div>
+</nav>

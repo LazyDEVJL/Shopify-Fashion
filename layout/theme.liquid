@@ -49,8 +49,10 @@
 
   <div class="page-container" id="PageContainer">
     {% include 'header-fashion' %}
-
-    <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+    
+    <main class="
+    {% if canonical_url contains 'collections' or canonical_url contains 'products' %}wrapper{% endif %} 
+    main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
     

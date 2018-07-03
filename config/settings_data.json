@@ -57,6 +57,12 @@
           "collection": "frontpage"
         }
       },
+      "men-collections": {
+        "type": "collection",
+        "settings": {
+          "collection": "men"
+        }
+      },
       "feature-row": {
         "type": "feature-row",
         "settings": {}

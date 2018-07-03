@@ -1,0 +1,21 @@
+<div class="item">
+   <div class="product-image">
+      <a href="{{ product.url }}" title="">
+         <img class="product-featured-image" src="{{ product.featured_image | img_url: '70x95' }}"
+            alt="{{ product.title }}">
+      </a>
+   </div>
+   <div class="product-meta">
+      <a class="product-name" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a>
+      <div class="product-price">
+         <span class="amout">
+            <span>
+               <span class="money">{{ product.price | money }}</span>
+            </span>
+         </span>
+      </div>
+      <!-- /.product-price -->
+      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+   </div>
+   <!-- /.product-meta -->
+</div>

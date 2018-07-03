@@ -1,0 +1,236 @@
+<!-- /snippets/breadcrumb.liquid -->
+{% include 'breadcumb-fashion' %}
+
+<h3 class="page_name">
+	Collection Page
+</h3>
+<div class="grid--rev">
+   <div class="grid__item large--three-quarters collection-grid">
+      <header class="collection__info section-header">
+         <h1 class="section-header__title">
+				{% if handle != 'all' %}
+					{% for collection in collections %}
+						{% if handle == collection.handle %}
+							{{ collection.title }}
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					All Products
+				{% endif %}
+			</h1>
+         <div class="rte rte--header space-10">
+         </div>
+      </header>
+      <div class="collection__sort section-header">
+         <div class="section-header__right">
+            <!-- /snippets/collection-sorting.liquid -->
+            {% include 'collection-sorting' %}
+            <div class="collection-view left">
+               <button type="button" title="Grid view" class="change-view change-view--active" data-view="grid">
+                  <span class="icon-fallback-text">
+                     <span class="icon icon-grid-view" aria-hidden="true"></span>
+                     <span class="fallback-text">Grid view</span>
+                  </span>
+               </button>
+               <button type="button" title="List view" class="change-view" data-view="list">
+                  <span class="icon-fallback-text">
+                     <span class="icon icon-list-view" aria-hidden="true"></span>
+                     <span class="fallback-text">List view</span>
+                  </span>
+               </button>
+            </div>
+            <script>
+               /*============================================================================
+                  Inline JS because collection liquid object is only available
+                  on collection pages and not external JS files
+                  ==============================================================================*/
+               Shopify.queryParams = {};
+               if (location.search.length) {
+                  for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                     aKeyValue = aCouples[i].split('=');
+                     if (aKeyValue.length > 1) {
+                        Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                     }
+                  }
+               }
+               $(function () {
+                  $('#SortBy')
+                     .val('title-ascending')
+                     .bind('change', function () {
+                        Shopify.queryParams.sort_by = jQuery(this).val();
+                        location.search = jQuery.param(Shopify.queryParams);
+                     });
+               });
+            </script>
+         </div>
+      </div>
+      <div class="grid-uniform">
+         <!-- /snippets/product-grid-item.liquid -->
+			{% if handle != 'all' %}
+				{% for collection in collections %}
+					{% assign currentHandle = collection.handle %}
+					{% if handle == collection.handle %}
+						{% for product in collections[currentHandle].products %}
+							{% include 'product-grid-item' %}
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				{% for product in collections.all.products %}
+					{% include 'product-grid-item' %}
+				{% endfor %}
+			{% endif %}
+      </div>
+      <div class="pagination">
+         <span class="page current">1</span>
+         <span class="page">
+            <a href="/collections/all?page=2" title="">2</a>
+         </span>
+         <span class="page">
+            <a href="/collections/all?page=3" title="">3</a>
+         </span>
+         <span class="next">
+            <a href="/collections/all?page=2" title="">&rarr;</a>
+         </span>
+      </div>
+   </div>
+   <div class="sidebar grid__item large--one-quarter">
+      <div class="collection-sidebar">
+         <!-- /snippets/collection-sidebar.liquid -->
+         {% include 'collection-sidebar' %}
+         <!-- end category sidebar -->
+         <div class="filter-blocks widget">
+            <h4 class="widget__title">Filters By</h4>
+            <div class="widget__content">
+               <div class="filter-block filter-custom filter-tag color">
+                  <h5 class="filter-title"> Color
+                     <a href="javascript:void(0)" class="clear" style="display:none">x</a>
+                  </h5>
+                  <div class="filter-content">
+                     <ul class="box-grid-stype colors">
+                        <li class="li-color">
+                           <input type="checkbox" value="red" />
+                           <a href="javascript:void(0)" title="red">
+                              <span class="color red"></span>
+                           </a>
+                        </li>
+                        <li class="li-color">
+                           <input type="checkbox" value="blue" />
+                           <a href="javascript:void(0)" title="blue">
+                              <span class="color blue"></span>
+                           </a>
+                        </li>
+                        <li class="li-color">
+                           <input type="checkbox" value="white" />
+                           <a href="javascript:void(0)" title="white">
+                              <span class="color white"></span>
+                           </a>
+                        </li>
+                        <li class="li-color">
+                           <input type="checkbox" value="pink" />
+                           <a href="javascript:void(0)" title="pink">
+                              <span class="color pink"></span>
+                           </a>
+                        </li>
+                        <li class="li-color">
+                           <input type="checkbox" value="orange" />
+                           <a href="javascript:void(0)" title="orange">
+                              <span class="color orange"></span>
+                           </a>
+                        </li>
+                        <li class="li-color">
+                           <input type="checkbox" value="green" />
+                           <a href="javascript:void(0)" title="green">
+                              <span class="color green"></span>
+                           </a>
+                        </li>
+                        <li class="li-color">
+                           <input type="checkbox" value="black" />
+                           <a href="javascript:void(0)" title="black">
+                              <span class="color black"></span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="filter-block  filter-custom filter-tag">
+                  <h5 class="filter-title">
+                     Size
+                     <a href="javascript:void(0)" class="clear" style="display:none">x</a>
+                  </h5>
+                  <div class="filter-content">
+                     <ul class="box-grid-stype sizes">
+                        <li class="li-size">
+                           <input type="checkbox" value="l" />
+                           <a href="javascript:void(0)" title="L">L</a>
+                        </li>
+                        <li class="li-size">
+                           <input type="checkbox" value="m" />
+                           <a href="javascript:void(0)" title="M">M</a>
+                        </li>
+                        <li class="li-size">
+                           <input type="checkbox" value="s" />
+                           <a href="javascript:void(0)" title="S">S</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="filter-block filter-custom filter-tag">
+                  <h5 class="filter-title">
+                     Price
+                     <a href="javascript:void(0)" class="clear" style="display:none">x</a>
+                  </h5>
+                  <div class="filter-content">
+                     <ul class="box-list-stype">
+                        <li class="li-price">
+                           <input type="checkbox" value="100-200" />
+                           <a href="javascript:void(0)" title="100$-200$">100$-200$</a>
+                        </li>
+                        <li class="li-price">
+                           <input type="checkbox" value="200-300" />
+                           <a href="javascript:void(0)" title="200$-300$">200$-300$</a>
+                        </li>
+                        <li class="li-price">
+                           <input type="checkbox" value="300-400" />
+                           <a href="javascript:void(0)" title="300$-400$">300$-400$</a>
+                        </li>
+                        <li class="li-price">
+                           <input type="checkbox" value="400-500" />
+                           <a href="javascript:void(0)" title="400$-500$">400$-500$</a>
+                        </li>
+                        <li class="li-price">
+                           <input type="checkbox" value="500-600" />
+                           <a href="javascript:void(0)" title="500$-600$">500$-600$</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="widget-product widget">
+            <h4 class="widget__title">New Products</h4>
+            <div class="widget__content"> {%- comment -%}limit 5{%- endcomment -%}
+				{% for product in collections.all.products limit:5 %}
+					{% include 'collection-widget-product' %}
+				{% endfor %}
+            </div>
+         </div>
+         <!-- end widget 1 -->
+         <div class="widget-ads widget">
+            <a href="#">
+               <img src="//cdn.shopify.com/s/files/1/1195/4332/t/2/assets/ads_block.jpg?12725127173897167736" alt="" />
+            </a>
+         </div>
+         <!-- end advertising -->
+         <div class="widget-cms widget">
+            <h4 class="widget__title">Custom cms widget</h4>
+            <em>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images,
+               media... whatever you like.</em>
+            <br>
+            <br>
+            <em>There are many similar sample content placeholders across the store. All editable from admin panel.</em>
+         </div>
+         <!-- end advertising -->
+      </div>
+   </div>
+</div>
